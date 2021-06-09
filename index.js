@@ -45,12 +45,17 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+//Define the function, take array as parameter
+function copy(array)
+{
+    //Declare an array to hold the copy
+    const arrayCopy = [...array];
+    //Return the new array
+    return arrayCopy;
 }    
 
-
-
+//Call the function, pass in originalFlavors
+copy(originalFlavors);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,9 +68,11 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+//Define the function, take array as parameter
+function is31Flavors(array)
+{
+   
+    return true;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,10 +88,18 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+//Define the function, take array and flavor as parameters
+function addFlavor(array, flavor)
+{
+    //Unshift() to add flavor to array
+
+    array.unshift(flavor);
+    //Return the array
+    return array;
 }
 
+//Call the function, pass in originalFlavors and marble as arguments
+addFlavor(originalFlavors, "marble");
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -97,10 +112,18 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+//Define the function, take array as parameter
+function removeLastFlavor(array)
+{
+    //Pop() last flavor from array
+    array.pop();
+
+    //Return the array
+    return array;
 }
 
+//Call the function, pass in originalFlavors
+removeLastFlavor(originalFlavors);
 
 
 
@@ -115,9 +138,15 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+//Define the function, take array and element as parameters
+function getFlavorByIndex(array, element)
+{
+    //Return the flavor located at [element]
+    return array[element];
 }
+
+//Call the function, pass in originalFlavors and 1 as arguments
+getFlavorByIndex(originalFlavors, 1);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -135,8 +164,22 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+//Define the function, take array, flavor as parameters
+function removeFlavorByName(array, flavor)
+{
+    //For loop to search the array
+    for (let index = 0; index < array.length; index ++)
+    {
+        //If the flavor at location of index is equal to flavor
+        if (array[index] === flavor)
+        {
+            //splice() the flavor from the array at location index
+            array.splice(index,1);
+        }
+    }
+
+    //Return the array minus one flavor
+    return array;
 }
 
 
@@ -177,6 +220,7 @@ function filterByWord(array, string)
         }
     }
 
+    //Return the filtered array
     return filteredArray;
 }
 /* Use console log to see a test report */
@@ -194,10 +238,25 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+//Define the function, take array as paramter
+function getAverageWordLength(array)
+{
+    //Declare and initialize a counter variable
+    let count = 0;
+    //For loop to search the array
+    for (let index = 0; index < array.length; index++ )
+    {
+        if (array[index].length > 1 )
+        {
+            words += array[index].length;
+        
+        }
+    } 
+    return count;
 }
 
+//Call the function, passing in orginalFlavors as argument
+getAverageWordLength(originalFlavors);
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
