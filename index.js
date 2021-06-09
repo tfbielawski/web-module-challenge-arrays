@@ -103,6 +103,7 @@ function removeLastFlavor(/*your code here*/){
 
 
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
 
@@ -147,11 +148,11 @@ that contain the received string. This would allow you to be able to filter for 
 by passing in those specific strings.
 
 Use the filterByWord function below to do the following:
-    1. Receive an array
-    2. Receive a string (example: "chocolate")
-    3. Check to see if any of the flavors in the array contain that string
-    4. If they do, add them to a new array
-    5. Return the new array that contains the filtered flavors
+    1. -Receive an array
+    2. -Receive a string (example: "chocolate")
+    3. -Check to see if any of the flavors in the array contain that string
+    4. -If they do, add them to a new array
+    5. -Return the new array that contains the filtered flavors
 
     For example: filterByWord(originalFlavors, "Chocolate") should return ["Chocolate", "Chocolate Almond", "Chocolate Chip", "Chocolate Fudge", "Chocolate Mint", "Chocolate Ribbon"]
 
@@ -160,10 +161,26 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
-}
+//Define the function
+function filterByWord(array, string)
+{
+    //Declare empty array to push into
+    const filteredArray = [];
+    //For loop to search
+    for (let i = 0; i < array.length; i++)
+    { 
+        //If the array at [i] contains the string using >>includes()<<
+        if (array[i].includes(string))
+        {
+            //Push it to new array
+            filteredArray.push(array[i]);
+        }
+    }
 
+    return filteredArray;
+}
+/* Use console log to see a test report */
+console.log("task 7", filterByWord(originalFlavors, "Chocolate"));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
